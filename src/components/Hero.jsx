@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { cafe } from '../config/cafe'
 import { getOpenStatus } from '../utils'
+import ThemeToggle from './ThemeToggle'
 
 const Button = ({ href, primary, children, ...rest }) => (
   <a
@@ -34,7 +35,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <header className="relative isolate flex min-h-[100svh] flex-col overflow-hidden">
+    <header className="dark-scope relative isolate flex min-h-[100svh] flex-col overflow-hidden rounded-b-[2rem]">
       {/* The photo shows instantly (and stays for anyone who prefers reduced motion);
           the muted looping video fades in over it once it can play. */}
       <img
@@ -64,16 +65,17 @@ export default function Hero() {
         <p className="font-display text-xl tracking-wide whitespace-nowrap">
           {cafe.name} <span className="text-amber italic">{cafe.suffix}</span>
         </p>
-        <p className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3.5 py-1.5 text-[0.8rem] font-medium whitespace-nowrap ring-1 ring-white/15 backdrop-blur">
+        <ThemeToggle className="bg-black/40 text-cream ring-white/15 backdrop-blur hover:bg-black/55" />
+      </div>
+
+      <div className="mx-auto mt-auto w-full max-w-5xl px-5 pb-14 text-center">
+        <p className="rise mb-5 inline-flex items-center gap-2 rounded-full bg-black/40 px-3.5 py-1.5 text-[0.8rem] font-medium whitespace-nowrap ring-1 ring-white/15 backdrop-blur">
           <span
             className={`h-2 w-2 rounded-full ${status.open ? 'bg-leaf' : 'bg-amber'}`}
             aria-hidden="true"
           />
           {status.label}
         </p>
-      </div>
-
-      <div className="mx-auto mt-auto w-full max-w-5xl px-5 pb-14 text-center">
         <p className="rise text-sm font-semibold tracking-[0.25em] text-amber uppercase">
           Specialty coffee · Bengaluru
         </p>

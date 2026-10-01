@@ -8,7 +8,7 @@ export default function StoryTeaser() {
       <a
         href="#/about"
         onClick={rememberMenuScroll}
-        className="group relative isolate block overflow-hidden rounded-3xl ring-1 ring-line"
+        className="dark-scope group relative isolate block overflow-hidden rounded-3xl ring-1 ring-line"
       >
         <img
           src="/images/interior-2.jpg"

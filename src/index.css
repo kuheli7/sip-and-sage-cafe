@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
-/* One palette, used everywhere. Change these and the whole site re-themes. */
+/* One palette, used everywhere. Change these and the whole site re-themes.
+   The values below are the DARK theme, which is the default.
+   The names describe a role, not a colour:
+     ink = page background      roast = card      cream = main text      latte = quieter text
+     amber = accent (buttons, prices)             line = borders
+   The light theme (further down) re-defines the same names, so no component needs to know
+   which theme is on. */
 @theme {
   --color-ink: #120e0b;
   --color-roast: #1c1612;
@@ -11,7 +17,7 @@
   --color-amber: #e0a96d;
   --color-amber-deep: #c98d4c;
   --color-leaf: #8fb37a;
-  --color-chalk: #ddd5c4; /* chalkboard writing: warm, never pure white */
+  --color-danger: #ff8a7a;
 
   --font-display: "DM Serif Display", Georgia, serif;
   --font-sans: "Manrope", system-ui, sans-serif;
@@ -34,6 +40,44 @@
     outline: 2px solid var(--color-amber);
     outline-offset: 3px;
     border-radius: 0.5rem;
+  }
+}
+
+/* ---------- Light theme: warm paper and espresso ink ----------
+   Switched by <html data-theme="light"> (see ThemeToggle). Text and accent colours were
+   checked for contrast on the cream background (all at least 4.5:1). */
+:root[data-theme="light"] {
+  --color-ink: #f6efe3;
+  --color-roast: #fbf6ec;
+  --color-roast-2: #f0e6d6;
+  --color-line: #d9ccb6;
+  --color-cream: #2b1f17;
+  --color-latte: #6f5849;
+  --color-amber: #9a4f1a;
+  --color-amber-deep: #7d3f12;
+  --color-leaf: #4f7a40;
+  --color-danger: #b3261e;
+  color-scheme: light;
+}
+
+/* Anything that sits on top of a photo (the hero, the favourites cards, the story card, the
+   visit section) keeps the dark colours in BOTH themes, because its text is light-on-dark by
+   design. Putting this class on an element re-applies the dark palette inside it.
+   It lives in the components layer so an element's own text-* classes still win over it. */
+@layer components {
+  .dark-scope {
+    --color-ink: #120e0b;
+    --color-roast: #1c1612;
+    --color-roast-2: #271e18;
+    --color-line: #3a2e25;
+    --color-cream: #f4ebdd;
+    --color-latte: #b9a592;
+    --color-amber: #e0a96d;
+    --color-amber-deep: #c98d4c;
+    --color-leaf: #8fb37a;
+    --color-danger: #ff8a7a;
+    color-scheme: dark;
+    color: var(--color-cream); /* so text without its own colour class turns light too */
   }
 }
 

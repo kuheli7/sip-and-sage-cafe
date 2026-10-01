@@ -24,7 +24,7 @@ export default function QrPage() {
   const input = 'mt-1 w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 font-normal'
 
   return (
-    <div className="min-h-screen bg-cream text-ink">
+    <div className="dark-scope min-h-screen bg-cream text-ink">
       <main className="mx-auto max-w-4xl px-5 py-8">
         <div className="no-print mb-8">
           <a href="#/" className="text-sm text-neutral-600 hover:underline">← Back to menu</a>

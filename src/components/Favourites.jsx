@@ -35,7 +35,7 @@ export default function Favourites({ onSelect }) {
             <button
               type="button"
               onClick={() => onSelect(item)}
-              className="group relative block aspect-[4/5] w-full overflow-hidden rounded-3xl text-left ring-1 ring-line"
+              className="dark-scope group relative block aspect-[4/5] w-full overflow-hidden rounded-3xl text-left ring-1 ring-line"
             >
               <img
                 src={item.image}

@@ -10,6 +10,7 @@ Built with React 19, Vite 8 and Tailwind CSS 4. No backend yet, so it hosts for 
 - Add to order, a floating cart bar, and a "Your order" page (table, notes, light suggestions, subtotal + GST + total)
 - Per-table QR codes (`/#/qr`): each code carries `?table=N`, so the order knows where to be served
 - Live "Open now" status from the opening hours
+- Dark theme by default, with a light theme and a toggle (the choice is remembered on the device)
 - An "Our story" page (`/#/about`) and a footer with visit, contact and explore links
 
 > **Demo mode:** "Place order" saves the order on the guest's device only (`src/lib/orders.js`).
@@ -29,7 +30,8 @@ npm run build    # outputs /dist
 2. `src/data/story.js` — the "Our story" page. **The text is sample copy:** replace it with the real café's own story
 3. `src/data/menu.js` — categories, items, prices, diet (`veg` / `egg` / `nonveg`), optional `light: true` for suggestions
 4. `public/images` — replace the photos (keep the file names, or change the `image` paths)
-5. `src/index.css` — colours live in the `@theme` block at the top
+5. `src/index.css` — colours live in the `@theme` block at the top (dark), with the light palette just below it.
+   Parts that sit on photos (hero, story card, visit section) use `.dark-scope` so they stay dark in both themes
 
 ## Table QR codes
 

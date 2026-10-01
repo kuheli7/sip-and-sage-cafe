@@ -7,7 +7,7 @@ export default function VisitUs() {
   const order = [1, 2, 3, 4, 5, 6, 0]
 
   return (
-    <section id="visit" className="relative isolate mt-10 overflow-hidden">
+    <section id="visit" className="dark-scope relative isolate mt-10 overflow-hidden">
       <img
         src="/images/interior-1.jpg"
         alt=""

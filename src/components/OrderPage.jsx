@@ -254,7 +254,7 @@ export default function OrderPage() {
             </label>
           )}
           {error && (
-            <p role="alert" className="mt-3 text-sm font-semibold text-[#ff8a7a]">
+            <p role="alert" className="mt-3 text-sm font-semibold text-danger">
               {error}
             </p>
           )}

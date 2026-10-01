@@ -1,3 +1,5 @@
+import ThemeToggle from './ThemeToggle'
+
 // Sticky top bar used by the inner pages (Your order, Our story): back arrow + title.
 export default function PageHeader({ title }) {
   return (
@@ -13,6 +15,7 @@ export default function PageHeader({ title }) {
           </svg>
         </a>
         <h1 className="font-display text-2xl">{title}</h1>
+        <ThemeToggle className="ml-auto bg-roast text-cream ring-line hover:bg-roast-2" />
       </div>
     </header>
   )

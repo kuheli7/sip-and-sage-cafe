@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import { menu } from './data/menu'
 import { cafe } from './config/cafe'
 import { CartProvider } from './state/CartContext'
+import { ThemeProvider } from './state/ThemeContext'
 import { menuScroll } from './lib/scroll'
 import Hero from './components/Hero'
 import Favourites from './components/Favourites'
@@ -99,5 +100,9 @@ export default function App() {
   else if (hash.startsWith('#/about')) page = <AboutPage />
   else page = <MenuPage diet={diet} setDiet={setDiet} />
 
-  return <CartProvider>{page}</CartProvider>
+  return (
+    <ThemeProvider>
+      <CartProvider>{page}</CartProvider>
+    </ThemeProvider>
+  )
 }
