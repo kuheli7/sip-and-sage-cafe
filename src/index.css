@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* One palette, used everywhere. Change these and the whole site re-themes. */
+@theme {
+  --color-ink: #120e0b;
+  --color-roast: #1c1612;
+  --color-roast-2: #271e18;
+  --color-line: #3a2e25;
+  --color-cream: #f4ebdd;
+  --color-latte: #b9a592;
+  --color-amber: #e0a96d;
+  --color-amber-deep: #c98d4c;
+  --color-leaf: #8fb37a;
+
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    -webkit-tap-highlight-color: transparent;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-ink font-sans text-cream antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-amber);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* cart count badge: a quick bump when the number changes */
+@keyframes pop {
+  0% { transform: scale(0.6); }
+  60% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+.pop { animation: pop 0.3s ease-out; }
+
+/* slow push-in on the hero photo so the first screen feels alive */
+@keyframes drift {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.1); }
+}
+.drift { animation: drift 28s ease-in-out infinite alternate; }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* item detail dialog */
+dialog.sheet {
+  margin: auto auto 0;
+  width: 100%;
+  max-width: 28rem;
+  max-height: 92svh;
+  padding: 0;
+  border: 0;
+  border-radius: 1.75rem 1.75rem 0 0;
+  background: var(--color-roast);
+  color: var(--color-cream);
+  overflow: hidden;
+}
+dialog.sheet[open] { animation: rise 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+dialog.sheet::backdrop { background: rgb(0 0 0 / 0.65); backdrop-filter: blur(3px); }
+@media (min-width: 640px) {
+  dialog.sheet { margin: auto; border-radius: 1.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::after, *::before { animation: none !important; transition: none !important; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; color: black; }
+}
