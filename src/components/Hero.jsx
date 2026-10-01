@@ -61,10 +61,10 @@ export default function Hero() {
       />
 
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-5 pt-6">
-        <p className="font-display text-xl tracking-wide">
+        <p className="font-display text-xl tracking-wide whitespace-nowrap">
           {cafe.name} <span className="text-amber italic">{cafe.suffix}</span>
         </p>
-        <p className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3.5 py-1.5 text-[0.8rem] font-medium ring-1 ring-white/15 backdrop-blur">
+        <p className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3.5 py-1.5 text-[0.8rem] font-medium whitespace-nowrap ring-1 ring-white/15 backdrop-blur">
           <span
             className={`h-2 w-2 rounded-full ${status.open ? 'bg-leaf' : 'bg-amber'}`}
             aria-hidden="true"

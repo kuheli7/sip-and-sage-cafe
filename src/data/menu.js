@@ -2,6 +2,7 @@
 // diet: 'veg' | 'egg' | 'nonveg'
 // tag (optional): 'Bestseller' | 'New' | "Chef's pick"
 // light (optional): true marks a drink or small bite that is suggested on the order page
+// note (optional): a short handwritten-style aside shown under the description
 // image: file in /public/images (replace with the café's own photos for a real client)
 
 const img = (name) => `/images/${name}.jpg`
@@ -13,10 +14,10 @@ export const menu = [
     blurb: 'Single-origin beans, roasted in small batches.',
     items: [
       { name: 'Latte', desc: 'Silky steamed milk over a double shot, finished with latte art.', price: 170, diet: 'veg', image: img('cafe-latte') },
-      { name: 'Flat White', desc: 'Velvety microfoam over a double shot. Strong, smooth, small.', price: 180, diet: 'veg', tag: 'Bestseller', image: img('pour') },
+      { name: 'Flat White', desc: 'Velvety microfoam over a double shot. Strong, smooth, small.', price: 180, diet: 'veg', tag: 'Bestseller', note: 'our most-ordered', image: img('pour') },
       { name: 'Cappuccino', desc: 'Equal parts espresso, milk and foam.', price: 160, diet: 'veg', image: img('cappuccino') },
       { name: 'Iced Latte', desc: 'Cold milk, ice and slow-pulled espresso.', price: 190, diet: 'veg', light: true, image: img('iced-latte') },
-      { name: 'Jaggery Cold Brew', desc: '18-hour cold brew with milk, sweetened with jaggery.', price: 210, diet: 'veg', tag: "Chef's pick", image: img('cold-brew') },
+      { name: 'Jaggery Cold Brew', desc: '18-hour cold brew with milk, sweetened with jaggery.', price: 210, diet: 'veg', tag: "Chef's pick", note: 'worth the 18 hours', image: img('cold-brew') },
     ],
   },
   {
@@ -47,7 +48,7 @@ export const menu = [
     blurb: 'Comfort food that pairs with everything above.',
     items: [
       { name: 'Grilled Veg Ciabatta', desc: 'Roasted peppers, zucchini and aubergine, pesto spread.', price: 250, diet: 'veg', image: img('paneer-sandwich') },
-      { name: 'Pesto Farfalle', desc: 'Basil pesto, cherry tomato and parmesan.', price: 290, diet: 'veg', tag: "Chef's pick", image: img('pasta') },
+      { name: 'Pesto Farfalle', desc: 'Basil pesto, cherry tomato and parmesan.', price: 290, diet: 'veg', tag: "Chef's pick", note: 'made with fresh basil', image: img('pasta') },
       { name: 'Chicken Club Sandwich', desc: 'Herb chicken, greens, tomato and garlic mayo.', price: 280, diet: 'nonveg', image: img('chicken-sandwich') },
       { name: 'Crispy Chicken Burger', desc: 'Buttermilk fried chicken, cheddar, pickled onion and house sauce in a brioche bun.', price: 320, diet: 'nonveg', tag: 'New', image: img('crispy-chicken') },
       { name: 'Buffalo Chicken Wings', desc: 'Six sticky wings tossed in buffalo sauce, with a cool ranch dip.', price: 310, diet: 'nonveg', image: img('wings') },
@@ -62,7 +63,7 @@ export const menu = [
     items: [
       { name: 'Biscoff Cheesecake', desc: 'Creamy cheesecake on a biscuit base with caramel drizzle.', price: 240, diet: 'egg', tag: 'Bestseller', image: img('cheesecake') },
       { name: 'Brownie Sundae', desc: 'Warm brownie, vanilla ice cream, fudge sauce.', price: 220, diet: 'egg', image: img('brownie') },
-      { name: 'Banana Walnut Loaf', desc: 'Moist and spiced. We toast it if you ask.', price: 150, diet: 'veg', light: true, image: img('banana-loaf') },
+      { name: 'Banana Walnut Loaf', desc: 'Moist and spiced. We toast it if you ask.', price: 150, diet: 'veg', light: true, note: 'baked this morning', image: img('banana-loaf') },
     ],
   },
 ]

@@ -30,8 +30,10 @@ export function getOpenStatus(hours, now = new Date()) {
   for (let i = 1; i <= 7; i++) {
     const next = hours[(now.getDay() + i) % 7]
     if (next) {
-      const day = i === 1 ? 'tomorrow' : DAYS[(now.getDay() + i) % 7]
-      return { open: false, label: `Closed · opens ${day} ${formatTime(next[0])}` }
+      // Kept short: this sits beside the café name at the top of a phone screen.
+      // "opens 8 am" on its own already reads as "tomorrow morning" when it is night.
+      const when = i === 1 ? formatTime(next[0]) : `${DAYS[(now.getDay() + i) % 7].slice(0, 3)} ${formatTime(next[0])}`
+      return { open: false, label: `Closed · opens ${when}` }
     }
   }
   return { open: false, label: 'Closed' }

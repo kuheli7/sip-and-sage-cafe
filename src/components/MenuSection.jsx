@@ -2,6 +2,7 @@ import { cafe } from '../config/cafe'
 import { formatPrice } from '../utils'
 import DietMark from './DietMark'
 import AddButton from './AddButton'
+import { HandArrow } from './icons'
 
 function MenuItem({ item, onSelect }) {
   return (
@@ -31,6 +32,12 @@ function MenuItem({ item, onSelect }) {
             <span className="font-item text-[1.1rem] leading-snug font-semibold">{item.name}</span>
           </span>
           <span className="mt-1 line-clamp-2 block text-sm leading-snug text-latte">{item.desc}</span>
+          {item.note && (
+            <span className="mt-1 flex items-center gap-1.5 font-hand text-[1.3rem] leading-none text-amber/90">
+              <HandArrow className="h-4 w-5 shrink-0 -rotate-12" />
+              {item.note}
+            </span>
+          )}
         </span>
       </button>
 

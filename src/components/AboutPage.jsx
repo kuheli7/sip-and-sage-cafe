@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { cafe } from '../config/cafe'
 import { story } from '../data/story'
 import PageHeader from './PageHeader'
+import SprigDivider from './SprigDivider'
 import Footer from './Footer'
 import { goToMenu } from '../lib/scroll'
 
@@ -41,7 +42,9 @@ export default function AboutPage() {
           <img src="/images/cafe-latte.jpg" alt="" loading="lazy" className="mt-8 aspect-[4/5] w-full rounded-3xl object-cover" />
         </div>
 
-        <h2 className="mt-14 font-display text-3xl">
+        <SprigDivider className="mt-12 !px-0" />
+
+        <h2 className="mt-10 font-display text-3xl">
           What we <span className="text-amber italic">care about</span>
         </h2>
         <ul className="mt-6 space-y-3">

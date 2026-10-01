@@ -11,10 +11,12 @@
   --color-amber: #e0a96d;
   --color-amber-deep: #c98d4c;
   --color-leaf: #8fb37a;
+  --color-chalk: #ddd5c4; /* chalkboard writing: warm, never pure white */
 
   --font-display: "DM Serif Display", Georgia, serif;
   --font-sans: "Manrope", system-ui, sans-serif;
   --font-item: "Lora", Georgia, serif; /* dish names */
+  --font-hand: "Caveat", cursive; /* handwritten notes: used sparingly */
 }
 
 @layer base {

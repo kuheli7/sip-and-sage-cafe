@@ -35,7 +35,7 @@ function Suggestions({ inOrder }) {
       </h2>
       <p className="mt-1 px-1 text-sm text-latte">Easy extras that go well with what you picked.</p>
 
-      <ul className="no-scrollbar -mx-4 mt-4 flex snap-x gap-3 overflow-x-auto px-4 pb-2">
+      <ul className="no-scrollbar -mx-4 mt-4 flex scroll-px-4 snap-x gap-3 overflow-x-auto px-4 pb-2">
         {picks.map((item) => (
           <li key={item.name} className="w-40 shrink-0 snap-start overflow-hidden rounded-2xl bg-roast ring-1 ring-line">
             <img src={item.image} alt="" loading="lazy" className="h-28 w-full object-cover" />
