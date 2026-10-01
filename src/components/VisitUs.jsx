@@ -58,7 +58,7 @@ export default function VisitUs() {
             </a>
             <a
               href={`tel:${cafe.phone}`}
-              className="flex min-h-12 items-center justify-center rounded-full bg-white/10 font-semibold ring-1 ring-white/25 backdrop-blur transition hover:bg-white/20 active:scale-[0.98]"
+              className="flex min-h-12 items-center justify-center rounded-full bg-cream/10 font-semibold text-cream/90 ring-1 ring-cream/20 backdrop-blur transition hover:bg-cream/20 active:scale-[0.98]"
             >
               Call us
             </a>

@@ -19,7 +19,7 @@ export default function CategoryNav({ categories, active, diet, onDiet }) {
     const offset = chip.getBoundingClientRect().left - list.getBoundingClientRect().left
     list.scrollTo({
       left: list.scrollLeft + offset - (list.clientWidth - chip.offsetWidth) / 2,
-      behavior: 'smooth',
+      behavior: 'auto',
     })
   }, [active])
 
@@ -62,12 +62,12 @@ export default function CategoryNav({ categories, active, diet, onDiet }) {
                 onClick={() => onDiet(on ? 'all' : key)}
                 className={[
                   'flex h-10 items-center gap-2 rounded-full border px-2.5 text-sm font-semibold transition sm:px-3',
-                  on ? 'bg-cream/10 text-cream' : 'border-line text-latte',
+                  on ? 'bg-cream/10 text-cream/90' : 'border-line text-latte',
                 ].join(' ')}
                 style={on ? { borderColor: color } : undefined}
               >
                 <span
-                  className="grid h-4 w-4 place-items-center rounded-[3px] border-2 bg-cream"
+                  className="grid h-4 w-4 place-items-center rounded-[3px] border-2 bg-ink"
                   style={{ borderColor: color }}
                 >
                   <span className="h-1.5 w-1.5 rounded-full" style={{ background: color }} />

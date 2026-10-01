@@ -12,7 +12,7 @@ export default function DietMark({ diet, size = 'h-4 w-4' }) {
       role="img"
       aria-label={label}
       title={label}
-      className={`grid ${size} shrink-0 place-items-center rounded-[3px] border-2 bg-cream`}
+      className={`grid ${size} shrink-0 place-items-center rounded-[3px] border-2 bg-ink`}
       style={{ borderColor: color }}
     >
       <span className="h-1.5 w-1.5 rounded-full" style={{ background: color }} />

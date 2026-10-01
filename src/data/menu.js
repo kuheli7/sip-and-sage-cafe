@@ -70,6 +70,7 @@ export const menu = [
 // Photos are from Unsplash (free to use). Swap these for the café's own photos.
 export const photoCredits = [
   ['Hero & latte', 'tabitha turner, Phil Desforges'],
+  ['Hero video', 'K, via Pexels'],
   ['Coffee', 'Armin Lotfi, Andreas Behr, Demi DeHerrera, Nathan Dumlao'],
   ['Tea & more', 'Dhruval Upadhyay, Gaia&Co, Elena Leya, engin akyurt'],
   ['Food', 'Jasper Gribble, Ben Kolde, Natalie Behn, Deepansh Khurana, Eiliv Aceron, Eaters Collective, charlesdeluvio, Chad Montano, Sultan Abdulrazzaq, David Foodphototasty'],

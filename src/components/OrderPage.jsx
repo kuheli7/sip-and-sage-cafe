@@ -4,6 +4,7 @@ import { menu } from '../data/menu'
 import { formatPrice } from '../utils'
 import { useCart } from '../state/CartContext'
 import { submitOrder } from '../lib/orders'
+import PageHeader from './PageHeader'
 import DietMark from './DietMark'
 import AddButton, { Stepper } from './AddButton'
 
@@ -21,25 +22,6 @@ const allItems = menu.flatMap((c) => c.items)
 const card = 'rounded-3xl bg-roast p-5 ring-1 ring-line'
 const field =
   'mt-1.5 w-full rounded-2xl border border-line bg-ink px-4 py-3 text-base text-cream placeholder:text-latte/60'
-
-function Header({ title }) {
-  return (
-    <header className="sticky top-0 z-20 border-b border-line bg-ink">
-      <div className="mx-auto flex max-w-2xl items-center gap-3 px-4 py-3">
-        <a
-          href="#/"
-          aria-label="Back to menu"
-          className="grid h-10 w-10 place-items-center rounded-full bg-roast ring-1 ring-line transition hover:bg-roast-2"
-        >
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </a>
-        <h1 className="font-display text-2xl">{title}</h1>
-      </div>
-    </header>
-  )
-}
 
 // Light drinks and small bites that aren't in the order yet.
 function Suggestions({ inOrder }) {
@@ -60,7 +42,7 @@ function Suggestions({ inOrder }) {
             <div className="p-3">
               <p className="flex items-center gap-1.5 text-sm font-semibold">
                 <DietMark diet={item.diet} size="h-3.5 w-3.5" />
-                <span className="truncate">{item.name}</span>
+                <span className="font-item truncate">{item.name}</span>
               </p>
               <div className="mt-2 flex items-center justify-between">
                 <span className="text-sm font-semibold text-amber tabular-nums">{money(item.price)}</span>
@@ -173,7 +155,7 @@ export default function OrderPage() {
   async function place() {
     if (!table) {
       setError('Please choose your table number.')
-      document.getElementById('table-card')?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      document.getElementById('table-card')?.scrollIntoView({ block: 'center', behavior: 'auto' })
       return
     }
     setError('')
@@ -207,7 +189,7 @@ export default function OrderPage() {
   if (placed) {
     return (
       <>
-        <Header title="Order sent" />
+        <PageHeader title="Order sent" />
         <Confirmation order={placed} />
       </>
     )
@@ -216,7 +198,7 @@ export default function OrderPage() {
   if (lines.length === 0) {
     return (
       <>
-        <Header title="Your order" />
+        <PageHeader title="Your order" />
         <main className="mx-auto max-w-2xl px-4 py-20 text-center">
           <p className="font-display text-4xl">Nothing here yet</p>
           <p className="mt-2 text-latte">Add something from the menu and it will show up here.</p>
@@ -232,7 +214,7 @@ export default function OrderPage() {
 
   return (
     <>
-      <Header title="Your order" />
+      <PageHeader title="Your order" />
 
       <main className="mx-auto max-w-2xl px-4 pt-5 pb-36">
         <section id="table-card" className={card}>
@@ -285,9 +267,11 @@ export default function OrderPage() {
                 <img src={item.image} alt="" className="h-16 w-16 shrink-0 rounded-2xl object-cover" />
               )}
               <div className="min-w-0 flex-1">
-                <p className="flex items-center gap-2 font-semibold">
-                  <DietMark diet={item.diet} />
-                  <span className="truncate">{item.name}</span>
+                <p className="flex items-start gap-2 font-semibold">
+                  <span className="mt-1">
+                    <DietMark diet={item.diet} />
+                  </span>
+                  <span className="font-item leading-snug">{item.name}</span>
                 </p>
                 <p className="mt-1 text-sm text-latte tabular-nums">
                   {money(item.price)} <span className="text-latte/60">each</span>

@@ -10,7 +10,7 @@ export const cafe = {
   taxRate: 0.05, // 5% GST, added at checkout. Prices on the menu are before tax.
   taxLabel: 'GST',
 
-  tables: 12, // how many tables guests can choose from when ordering
+  tables: 5, // how many tables guests can choose from when ordering
   demoMode: true, // shows "orders are saved on this device only" until a real backend is connected
 
   phone: '+919999999999', // used for the Call button

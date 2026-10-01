@@ -10,7 +10,7 @@ function MenuItem({ item, onSelect }) {
       <button
         type="button"
         onClick={() => onSelect(item)}
-        className="flex w-full items-start gap-4 rounded-3xl bg-roast p-3 text-left ring-1 ring-line transition hover:bg-roast-2"
+        className="flex h-full w-full items-start gap-4 rounded-3xl bg-roast p-3 text-left ring-1 ring-line transition hover:bg-roast-2"
       >
         {item.image && (
           <span className="relative shrink-0">
@@ -23,9 +23,12 @@ function MenuItem({ item, onSelect }) {
           </span>
         )}
         <span className="min-w-0 flex-1 pb-11">
-          <span className="flex items-center gap-2">
-            <DietMark diet={item.diet} />
-            <span className="truncate text-[1.05rem] leading-tight font-semibold">{item.name}</span>
+          {/* long names wrap onto a second line instead of being cut off */}
+          <span className="flex items-start gap-2">
+            <span className="mt-[0.28rem]">
+              <DietMark diet={item.diet} />
+            </span>
+            <span className="font-item text-[1.1rem] leading-snug font-semibold">{item.name}</span>
           </span>
           <span className="mt-1 line-clamp-2 block text-sm leading-snug text-latte">{item.desc}</span>
         </span>

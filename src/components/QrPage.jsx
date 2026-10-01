@@ -7,7 +7,7 @@ import { cafe } from '../config/cafe'
 export default function QrPage() {
   // Default to the address the page is served from, so it works on any host.
   const [url, setUrl] = useState(() => window.location.origin + window.location.pathname)
-  const [tables, setTables] = useState(10)
+  const [tables, setTables] = useState(cafe.tables)
   const count = Math.min(Math.max(Number(tables) || 1, 1), 60)
 
   // Every table gets its own code (…?table=5) so the order knows where to be served.

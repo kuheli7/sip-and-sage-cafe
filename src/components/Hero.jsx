@@ -10,7 +10,7 @@ const Button = ({ href, primary, children, ...rest }) => (
       'inline-flex min-h-12 items-center justify-center rounded-full px-6 text-[0.95rem] font-semibold transition active:scale-[0.98]',
       primary
         ? 'col-span-2 bg-amber text-ink hover:bg-amber-deep sm:col-span-1'
-        : 'bg-white/10 text-cream ring-1 ring-white/25 backdrop-blur hover:bg-white/20',
+        : 'bg-cream/10 text-cream/90 ring-1 ring-cream/20 backdrop-blur hover:bg-cream/20',
     ].join(' ')}
   >
     {children}
@@ -20,6 +20,14 @@ const Button = ({ href, primary, children, ...rest }) => (
 export default function Hero() {
   const [status, setStatus] = useState(() => getOpenStatus(cafe.hours))
 
+  // Phones get the small file so the first screen loads fast. Wide screens on a normal
+  // connection get the sharper one (the small file is only 426×240 and looks soft when enlarged).
+  const [videoSrc] = useState(() =>
+    window.matchMedia('(min-width: 1024px)').matches && !navigator.connection?.saveData
+      ? '/video/hero-latte-hd.mp4'
+      : '/video/hero-latte.mp4',
+  )
+
   useEffect(() => {
     const id = setInterval(() => setStatus(getOpenStatus(cafe.hours)), 60_000)
     return () => clearInterval(id)
@@ -27,11 +35,25 @@ export default function Hero() {
 
   return (
     <header className="relative isolate flex min-h-[100svh] flex-col overflow-hidden">
+      {/* The photo shows instantly (and stays for anyone who prefers reduced motion);
+          the muted looping video fades in over it once it can play. */}
       <img
         src="/images/hero-latte.jpg"
         alt=""
         fetchPriority="high"
-        className="drift absolute inset-0 -z-20 h-full w-full object-cover object-[60%_center]"
+        className="absolute inset-0 -z-30 h-full w-full object-cover object-[60%_center]"
+      />
+      <video
+        className="hero-video absolute inset-0 -z-20 h-full w-full object-cover"
+        src={videoSrc}
+        poster="/images/hero-latte.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        tabIndex={-1}
       />
       <div
         aria-hidden="true"
