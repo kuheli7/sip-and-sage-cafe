@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { cafe } from '../config/cafe'
 import { getOpenStatus } from '../utils'
-import ThemeToggle from './ThemeToggle'
+import ThemeSwitch from './ThemeSwitch'
 
 const Button = ({ href, primary, children, ...rest }) => (
   <a
@@ -61,21 +61,20 @@ export default function Hero() {
         className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/55 to-ink/25"
       />
 
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-5 pt-6">
-        <p className="font-display text-xl tracking-wide whitespace-nowrap">
+      <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-3 px-5 pt-6">
+        <p className="font-display text-lg tracking-wide whitespace-nowrap min-[360px]:text-xl">
           {cafe.name} <span className="text-amber italic">{cafe.suffix}</span>
         </p>
-        <ThemeToggle className="bg-black/40 text-cream ring-white/15 backdrop-blur hover:bg-black/55" />
-      </div>
-
-      <div className="mx-auto mt-auto w-full max-w-5xl px-5 pb-14 text-center">
-        <p className="rise mb-5 inline-flex items-center gap-2 rounded-full bg-black/40 px-3.5 py-1.5 text-[0.8rem] font-medium whitespace-nowrap ring-1 ring-white/15 backdrop-blur">
+        <p className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-[0.75rem] font-medium whitespace-nowrap ring-1 ring-white/15 backdrop-blur min-[360px]:px-3.5 min-[360px]:text-[0.8rem]">
           <span
             className={`h-2 w-2 rounded-full ${status.open ? 'bg-leaf' : 'bg-amber'}`}
             aria-hidden="true"
           />
           {status.label}
         </p>
+      </div>
+
+      <div className="mx-auto mt-auto w-full max-w-5xl px-5 pb-14 text-center">
         <p className="rise text-sm font-semibold tracking-[0.25em] text-amber uppercase">
           Specialty coffee · Bengaluru
         </p>
@@ -99,6 +98,11 @@ export default function Hero() {
             Directions
           </Button>
           <Button href={`tel:${cafe.phone}`}>Call</Button>
+        </div>
+
+        {/* a labelled light / dark switch at the foot of the hero */}
+        <div className="rise mt-7 flex justify-center" style={{ animationDelay: '320ms' }}>
+          <ThemeSwitch />
         </div>
       </div>
     </header>
