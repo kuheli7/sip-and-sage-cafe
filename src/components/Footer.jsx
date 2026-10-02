@@ -2,6 +2,7 @@ import { cafe } from '../config/cafe'
 import { DAYS, formatTime } from '../utils'
 import { photoCredits } from '../data/menu'
 import { rememberMenuScroll } from '../lib/scroll'
+import { useCart } from '../state/CartContext'
 
 const heading = 'text-[0.68rem] font-bold tracking-[0.2em] text-latte/70 uppercase'
 const link = 'transition hover:text-amber'
@@ -9,11 +10,13 @@ const link = 'transition hover:text-amber'
 export default function Footer() {
   const today = new Date().getDay()
   const hours = cafe.hours[today]
+  const { count } = useCart()
 
   return (
     // Small, muted text throughout: a footer should sit quietly at the bottom, not compete with the menu.
-    // Generous bottom padding so the floating cart bar never covers the last line.
-    <footer className="border-t border-line pt-10 pb-28 text-[0.8125rem] leading-relaxed text-latte">
+    // Bottom padding leaves room for the floating buttons: the WhatsApp button, plus the cart bar above it
+    // once something is in the order. (Without the extra room they covered the last credit lines.)
+    <footer className={`border-t border-line pt-10 ${count > 0 ? 'pb-44' : 'pb-28'} text-[0.8125rem] leading-relaxed text-latte`}>
       <div className="mx-auto max-w-5xl px-5">
         {/* Wide screens: the brand on the left, the two link columns grouped on the right.
             (Three equal columns left big empty gaps between short pieces of text.) */}

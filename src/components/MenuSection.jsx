@@ -17,7 +17,7 @@ function MenuItem({ item, onSelect }) {
           <span className="relative shrink-0">
             <img src={item.image} alt="" loading="lazy" className="h-24 w-24 rounded-2xl object-cover" />
             {item.tag && (
-              <span className="absolute top-1.5 left-1.5 rounded-full bg-ink/85 px-2 py-0.5 text-[0.58rem] font-bold tracking-wider text-amber uppercase">
+              <span className="item-tag absolute top-1.5 left-1.5 rounded-full bg-ink/85 px-2 py-0.5 text-[0.58rem] font-bold tracking-wider text-amber uppercase">
                 {item.tag}
               </span>
             )}

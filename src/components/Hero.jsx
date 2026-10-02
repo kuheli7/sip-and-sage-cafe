@@ -58,12 +58,12 @@ export default function Hero() {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/55 to-ink/25"
+        className="veil-hero absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/55 to-ink/25"
       />
 
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-3 px-5 pt-6">
         <p className="font-display text-lg tracking-wide whitespace-nowrap min-[360px]:text-xl">
-          {cafe.name} <span className="text-amber italic">{cafe.suffix}</span>
+          {cafe.name} <span className="hero-suffix text-amber italic">{cafe.suffix}</span>
         </p>
         <p className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-[0.75rem] font-medium whitespace-nowrap ring-1 ring-white/15 backdrop-blur min-[360px]:px-3.5 min-[360px]:text-[0.8rem]">
           <span
@@ -75,7 +75,7 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto mt-auto w-full max-w-5xl px-5 pb-14 text-center">
-        <p className="rise text-sm font-semibold tracking-[0.25em] text-amber uppercase">
+        <p className="hero-eyebrow rise text-sm font-semibold tracking-[0.25em] text-amber uppercase">
           Specialty coffee · Bengaluru
         </p>
         <h1
@@ -86,7 +86,7 @@ export default function Hero() {
           <br />
           <span className="text-amber italic">good company.</span>
         </h1>
-        <p className="rise mx-auto mt-5 max-w-md text-lg text-cream/80" style={{ animationDelay: '160ms' }}>
+        <p className="hero-tagline rise mx-auto mt-5 max-w-md text-lg text-cream/80" style={{ animationDelay: '160ms' }}>
           Fresh bakes, small-batch beans and a corner table with your name on it.
         </p>
 

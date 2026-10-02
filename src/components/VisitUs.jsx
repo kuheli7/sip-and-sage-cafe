@@ -14,7 +14,7 @@ export default function VisitUs() {
         loading="lazy"
         className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-ink/80" />
+      <div aria-hidden="true" className="veil-visit absolute inset-0 -z-10 bg-ink/80" />
 
       <div className="mx-auto max-w-5xl px-5 py-16">
         <h2 className="font-display text-4xl sm:text-5xl">

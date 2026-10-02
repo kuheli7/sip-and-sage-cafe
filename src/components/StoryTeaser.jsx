@@ -16,9 +16,9 @@ export default function StoryTeaser() {
           loading="lazy"
           className="absolute inset-0 -z-20 h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
-        <span aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/40" />
+        <span aria-hidden="true" className="veil-story absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/40" />
         <span className="block px-6 pt-28 pb-7 sm:px-10 sm:pt-36">
-          <span className="text-xs font-semibold tracking-[0.25em] text-amber uppercase">Our story</span>
+          <span className="story-eyebrow text-xs font-semibold tracking-[0.25em] text-amber uppercase">Our story</span>
           <span className="mt-2 block max-w-lg font-display text-3xl leading-tight sm:text-4xl">{story.headline}</span>
           <span className="mt-2 block max-w-md text-latte">{story.teaser}</span>
           <span className="mt-4 inline-flex items-center gap-2 font-semibold text-amber">

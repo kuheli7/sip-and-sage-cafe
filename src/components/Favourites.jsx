@@ -43,14 +43,14 @@ export default function Favourites({ onSelect }) {
                 loading="lazy"
                 className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               />
-              <span className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+              <span className="veil-fav absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
               {item === todays && (
                 <span className="absolute top-3 right-3 rotate-3 rounded-full bg-amber px-3.5 py-1.5 font-hand text-[1.2rem] leading-none font-bold text-ink shadow-lg shadow-black/40">
                   Today's special
                 </span>
               )}
               <span className="absolute inset-x-0 bottom-0 p-4">
-                <span className="text-[0.7rem] font-semibold tracking-widest text-amber uppercase">
+                <span className="fav-tag text-[0.7rem] font-semibold tracking-widest text-amber uppercase">
                   {item.tag}
                 </span>
                 <span className="mt-1 block font-display text-2xl leading-tight">{item.name}</span>

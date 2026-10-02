@@ -81,6 +81,50 @@
   }
 }
 
+/* ---------- Light theme: softer photo overlays ----------
+   In dark mode the overlays fade to near-black, which suits the dark page. On the cream page of the
+   light theme that looks like heavy dark slabs, so here they are lighter. To keep the text readable
+   with less overlay, accent and secondary text on photos is a touch brighter in light mode only.
+   Every number below was chosen by measuring the real contrast of the text sitting on top
+   (WCAG AA: 4.5:1 for normal text, 3:1 for large text). If you change one, re-check the text. */
+:root[data-theme="light"] .dark-scope {
+  --color-amber: #f2c78f;
+  --color-latte: #d8c9b7;
+}
+:root[data-theme="light"] .veil-hero {
+  background-image: linear-gradient(to top, rgb(22 16 12 / 0.78) 0%, rgb(22 16 12 / 0.54) 36%, rgb(22 16 12 / 0.42) 62%, rgb(22 16 12 / 0.26) 80%, rgb(22 16 12 / 0.62) 100%);
+}
+/* small labels on the (moving) hero video read best in plain cream; amber is too dim on bright frames */
+:root[data-theme="light"] .hero-eyebrow,
+:root[data-theme="light"] .story-eyebrow { color: #f6eddf; }
+:root[data-theme="light"] .hero-tagline { color: #f6eddf; }
+:root[data-theme="light"] .hero-suffix { color: #fbe5c3; }
+:root[data-theme="light"] .veil-story {
+  background-image: linear-gradient(to top, rgb(22 16 12 / 0.8) 0%, rgb(22 16 12 / 0.6) 55%, rgb(22 16 12 / 0.3) 100%);
+}
+:root[data-theme="light"] .veil-visit {
+  background-color: rgb(22 16 12 / 0.66);
+}
+:root[data-theme="light"] .veil-fav {
+  background-image: linear-gradient(to top, rgb(22 16 12 / 0.84) 0%, rgb(22 16 12 / 0.5) 24%, rgb(22 16 12 / 0.1) 56%, transparent 100%);
+}
+/* the tiny amber label on a photo card gets its own backing so it stays readable on any photo */
+:root[data-theme="light"] .fav-tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background-color: rgb(22 16 12 / 0.72);
+}
+
+/* ---------- Light theme: keep ordinary text readable on cream ----------
+   Faded text (the "/70", "/80" variants) looks fine on a dark page but drops under 4.5:1 on cream,
+   so in light mode it is drawn at full strength. The same goes for form placeholders, and the small
+   badges on menu photos get a solid background so the photo can't show through and dim them. */
+:root[data-theme="light"] [class*="text-latte/"] { color: var(--color-latte); }
+:root[data-theme="light"] input::placeholder,
+:root[data-theme="light"] textarea::placeholder { color: var(--color-latte); opacity: 1; }
+:root[data-theme="light"] .item-tag { background-color: var(--color-ink); }
+
 @keyframes rise {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: none; }
