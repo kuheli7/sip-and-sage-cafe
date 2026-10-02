@@ -1,32 +1,39 @@
-# Sip & Sage Café — Menu & Ordering
+# Sip & Sage Café: menu + ordering demo
 
-A mobile-first café website: a photo-led menu with veg / non-veg filters, a cart, a full "Your order" page and
-per-table QR codes. Dark by default, with a light theme. Built with React 19, Vite 8 and Tailwind CSS 4.
-No backend yet, so it hosts for free.
+**Live demo:** https://sip-and-sage-cafe.vercel.app/ (best viewed on a phone)
 
-**Live demo: [sip-and-sage-cafe.vercel.app](https://sip-and-sage-cafe.vercel.app/)** (best viewed on a phone)
-
-> A demo built to show real café owners what their own site could look like. Café name, story, photos and contact
-> details are sample content.
+> **Slow coffee, good company.** A calm, photo-led, mobile-first café website with a full menu, a cart and a "Your order" page, plus per-table QR codes. Dark by default, with a light theme.
 
 ## Screenshots
 
-<p align="center">
-  <img src="docs/screenshots/01-hero.jpg" alt="Home screen: hero video, open-now status, call to action" width="23%" />
-  <img src="docs/screenshots/02-favourites.jpg" alt="House favourites with a Today's special badge, and the category bar" width="23%" />
-  <img src="docs/screenshots/03-menu.jpg" alt="Menu cards with photos, prices and Add buttons" width="23%" />
-  <img src="docs/screenshots/04-order.jpg" alt="Your order page with table, items and total" width="23%" />
-</p>
+### Phone
 
-<p align="center">
-  <img src="docs/screenshots/05-story.jpg" alt="Our story page" width="23%" />
-  <img src="docs/screenshots/06-menu-light.jpg" alt="The menu in the light theme" width="23%" />
-</p>
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/m-home.jpg" width="200" alt="Home page on a phone"><br><sub><b>Home</b></sub></td>
+    <td align="center"><img src="docs/screenshots/m-favourites.jpg" width="200" alt="House favourites and category bar"><br><sub><b>House favourites</b></sub></td>
+    <td align="center"><img src="docs/screenshots/m-menu.jpg" width="200" alt="Menu cards on a phone"><br><sub><b>Full menu</b></sub></td>
+    <td align="center"><img src="docs/screenshots/m-order.jpg" width="200" alt="Your order page on a phone"><br><sub><b>Your order</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/m-story.jpg" width="200" alt="Our story page"><br><sub><b>Our story</b></sub></td>
+    <td align="center"><img src="docs/screenshots/m-light.jpg" width="200" alt="The menu in the light theme"><br><sub><b>Light theme</b></sub></td>
+  </tr>
+</table>
 
-<p align="center">
-  <img src="docs/screenshots/07-desktop-hero.jpg" alt="Desktop home screen" width="48%" />
-  <img src="docs/screenshots/08-desktop-menu.jpg" alt="Desktop favourites and menu" width="48%" />
-</p>
+### Desktop
+
+<img src="docs/screenshots/d-home.jpg" width="900" alt="Home page on desktop">
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/d-menu.jpg" width="440" alt="Menu page on desktop"><br><sub><b>Menu</b></sub></td>
+    <td align="center"><img src="docs/screenshots/d-order.jpg" width="440" alt="Order page on desktop"><br><sub><b>Your order</b></sub></td>
+  </tr>
+</table>
+
+A demo built to show real café owners what their own site could look like. React 19 + Vite 8 + Tailwind CSS 4. No backend yet, so it hosts for free.
+Café name, story, photos and contact details are sample content.
 
 ## What it does
 
