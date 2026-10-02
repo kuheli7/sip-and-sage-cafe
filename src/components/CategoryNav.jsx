@@ -26,7 +26,7 @@ export default function CategoryNav({ categories, active, diet, onDiet }) {
   return (
     <nav
       aria-label="Menu categories"
-      className="no-print sticky top-0 z-20 border-b border-line bg-ink/95"
+      className="no-print sticky top-0 z-20 border-b border-line bg-ink"
     >
       <div className="mx-auto flex max-w-5xl items-center gap-2 px-5 py-3">
         <ul ref={listRef} className="no-scrollbar -mx-1 flex flex-1 gap-1.5 overflow-x-auto px-1">
